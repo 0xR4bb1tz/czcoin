@@ -8,9 +8,10 @@ import '@fontsource/space-grotesk/600.css'
 import '@fontsource/space-grotesk/700.css'
 import './styles.css'
 
-const TOKEN_ADDRESS = import.meta.env.VITE_TOKEN_ADDRESS || 'COMING SOON'
-const BUY_URL = import.meta.env.VITE_BUY_URL || ''
-const CHART_URL = import.meta.env.VITE_CHART_URL || ''
+const TOKEN_ADDRESS = import.meta.env.VITE_TOKEN_ADDRESS || '0xbe215ec3ab988df0a66174973d7667022dfd7777'
+const PAIR_ADDRESS = import.meta.env.VITE_PAIR_ADDRESS || '0xb42b6dA79acaDEB6AF2411E92b305d7166cb3811'
+const BUY_URL = import.meta.env.VITE_BUY_URL || `https://flap.sh/bnb/${TOKEN_ADDRESS}`
+const CHART_URL = import.meta.env.VITE_CHART_URL || `https://dexscreener.com/bsc/${PAIR_ADDRESS}`
 const X_URL = import.meta.env.VITE_X_URL || 'https://x.com/czcoinbsc'
 
 function Mark({ small = false }: { small?: boolean }) {
@@ -29,7 +30,7 @@ const BnbLogo = ({ className = '' }: { className?: string }) => <img className={
 const FlapLogo = ({ className = '' }: { className?: string }) => <img className={`asset-logo asset-logo--flap ${className}`} src="/flap.png" alt="Flap" />
 
 function App() {
-  const copyAddress = () => TOKEN_ADDRESS !== 'COMING SOON' && navigator.clipboard.writeText(TOKEN_ADDRESS)
+  const copyValue = (value: string) => navigator.clipboard.writeText(value)
   return <div className="site-shell">
     <header className="nav">
       <a className="brand" href="#top"><Mark small /><span>CZCOIN</span></a>
@@ -42,13 +43,13 @@ function App() {
     <main id="top">
       <section className="hero">
         <div className="hero-grid" aria-hidden="true" />
-        <div className="ticker"><span className="live-dot" /> LIVE ON BNB CHAIN <b>•</b> CZCOIN / BTC</div>
+        <div className="ticker"><span className="live-dot" /> LIVE ON BNB CHAIN <b>•</b> CZCOIN / BTCB</div>
         <div className="hero-lockup"><div className="hero-coin"><Mark /><span className="orbit orbit--one"/><span className="orbit orbit--two"/></div><div><p className="eyebrow">THE EXCHANGE ERA CONTINUES</p><h1>CZ<span>COIN</span></h1></div></div>
         <p className="hero-lead">Hold the coin. Earn the cornerstones.</p>
         <p className="hero-copy">A 3% tax on every buy and sell routes value back to holders in <strong>BTC</strong> and <strong>BNB</strong>. Built on BNB Chain for the people who never left the market.</p>
         <div className="hero-actions"><ActionLink href={BUY_URL}>Buy CZCoin <Arrow /></ActionLink><ActionLink className="button--ghost" href={CHART_URL}>View Chart</ActionLink></div>
         <div className="market-strip">
-          <div><small>BUY / SELL</small><strong>3% / 3%</strong></div><div><small>TRADING PAIR</small><strong>BTC</strong></div><div><small>REWARD 01</small><strong>BTC</strong></div><div><small>REWARD 02</small><strong>BNB</strong></div>
+          <div><small>BUY / SELL</small><strong>3% / 3%</strong></div><div><small>TRADING PAIR</small><strong>BTCB</strong></div><div><small>REWARD 01</small><strong>BTC</strong></div><div><small>REWARD 02</small><strong>BNB</strong></div>
         </div>
       </section>
 
@@ -69,10 +70,13 @@ function App() {
           <div className="allocation">
             <div className="allocation-row"><span>01</span><div><small>HOLDER REWARD</small><strong>BTC</strong></div><BitcoinLogo className="allocation-logo" /></div>
             <div className="allocation-row"><span>02</span><div><small>HOLDER REWARD</small><strong>BNB</strong></div><BnbLogo className="allocation-logo" /></div>
-            <div className="pair-row"><small>PRIMARY PAIR</small><strong>CZCOIN / BTC</strong></div>
+            <div className="pair-row"><small>PRIMARY PAIR</small><strong>CZCOIN / BTCB</strong></div>
           </div>
         </div>
-        <div className="contract-card"><div><small>OFFICIAL CONTRACT · BNB CHAIN</small><code>{TOKEN_ADDRESS}</code></div><button onClick={copyAddress} disabled={TOKEN_ADDRESS === 'COMING SOON'}>COPY</button></div>
+        <div className="contract-details">
+          <div className="contract-card"><div><small>OFFICIAL CONTRACT · BNB CHAIN</small><a href={`https://bscscan.com/token/${TOKEN_ADDRESS}`} target="_blank" rel="noreferrer"><code>{TOKEN_ADDRESS}</code></a></div><button onClick={() => copyValue(TOKEN_ADDRESS)}>COPY</button></div>
+          <div className="contract-card"><div><small>OFFICIAL PAIR · CZCOIN / BTCB</small><a href={CHART_URL} target="_blank" rel="noreferrer"><code>{PAIR_ADDRESS}</code></a></div><button onClick={() => copyValue(PAIR_ADDRESS)}>COPY</button></div>
+        </div>
       </section>
 
       <section className="roadmap" id="roadmap">
