@@ -58,9 +58,8 @@ function App() {
       </section>
 
       <section className="principles">
-        <article><b>01</b><div className="icon icon-bitcoin"><BitcoinLogo /></div><h3>BITCOIN REWARDS</h3><p>A portion of trading taxes rewards eligible holders in BTC, the asset that started it all.</p></article>
-        <article><b>02</b><div className="icon icon-bnb"><BnbLogo /></div><h3>BNB REWARDS</h3><p>Hold CZCoin and participate in a reward cycle powered by the native engine of BNB Chain.</p></article>
-        <article><b>03</b><div className="icon icon-chain"><FlapLogo /></div><h3>LAUNCHED ON FLAP</h3><p>Deployed through Flap's onchain launch infrastructure with the BTC pair and holder rewards built into the market.</p></article>
+        <article><b>01</b><div className="principle-assets"><div className="icon icon-bitcoin"><BitcoinLogo /></div><span>+</span><div className="icon icon-bnb"><BnbLogo /></div></div><h3>DUAL-ASSET REWARDS</h3><p>Every buy and sell feeds a 3% tax cycle designed to reward eligible CZCoin holders in both BTC and BNB.</p></article>
+        <article><b>02</b><div className="icon icon-chain"><FlapLogo /></div><h3>BUILT ON FLAP</h3><p>CZCoin launched through Flap's onchain infrastructure with a BTC trading pair and holder rewards integrated from day one.</p></article>
       </section>
 
       <section className="tokenomics" id="tokenomics">
