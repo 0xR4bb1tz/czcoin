@@ -38,9 +38,3 @@ body{background:#030303}.site-shell{background:radial-gradient(circle at 50% 4%,
 .button:hover .button-arrow{transform:translate(2px,-2px)}
 .button--disabled,.button--disabled:hover{background:#15140f;border-color:#343126;color:#676253;transform:none;box-shadow:none}
 @media(prefers-reduced-motion:reduce){.button-arrow{transition:none}.button:hover .button-arrow{transform:none}}
-.contract-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.contract-details .contract-card{min-width:0}
-.contract-details .contract-card>div{min-width:0}
-.contract-details .contract-card a{display:block;color:var(--ink);transition:color .2s}
-.contract-details .contract-card a:hover{color:#fff1b8}
-@media(max-width:900px){.contract-details{grid-template-columns:1fr}}
