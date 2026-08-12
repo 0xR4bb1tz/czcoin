@@ -17,7 +17,7 @@ function Mark({ small = false }: { small?: boolean }) {
   return <span className={`mark ${small ? 'mark--small' : ''}`}><img src="/assets/czcoin-logo.png" alt="" /></span>
 }
 
-const Arrow = () => <span aria-hidden="true">↗</span>
+const Arrow = () => <svg className="button-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M6 4h6v6" /></svg>
 
 function ActionLink({ href, children, className = '' }: { href: string; children: React.ReactNode; className?: string }) {
   if (!href) return <span className={`button button--disabled ${className}`} aria-disabled="true">{children}</span>

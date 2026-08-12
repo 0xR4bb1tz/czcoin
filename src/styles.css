@@ -27,3 +27,14 @@ body{background:#030303}.site-shell{background:radial-gradient(circle at 50% 4%,
 @media(max-width:1100px){.nav-links{gap:20px}.principles article{padding:30px}.section-heading{grid-template-columns:1fr}.section-heading>p:last-child{margin-top:28px}.roadmap-list article{grid-template-columns:110px minmax(150px,.65fr) 1fr}.how{gap:60px}}
 @media(max-width:760px){.market-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.principles{grid-template-columns:1fr}.principles article+article{border-left:1px solid var(--line);border-top:0}.roadmap-list article,.roadmap-list article:hover,.roadmap-list article.active{grid-template-columns:1fr;padding:26px 0}.roadmap-list article p{grid-column:auto}.allocation-row{grid-template-columns:42px minmax(0,1fr) auto}.contract-card{align-items:stretch;flex-direction:column;gap:20px}.contract-card button{align-self:flex-start}.how{grid-template-columns:1fr}.how-title{position:static}}
 @media(max-width:420px){.market-strip{grid-template-columns:1fr}.market-strip div,.market-strip div:nth-child(3),.market-strip div:last-child{border-left:0;border-right:0;text-align:center}.allocation-row{grid-template-columns:30px minmax(0,1fr) 48px;padding:20px 16px}.allocation-row .allocation-logo,.allocation-row .asset-logo--bnb{width:48px;height:48px}.pair-row{align-items:flex-start;flex-direction:column}.pair-row strong{overflow-wrap:anywhere}.ticker{max-width:100%;line-height:1.5}}
+
+/* Button system */
+.button{min-height:50px;padding:0 20px;border:1px solid #f6e7b0;background:#f6e7b0;color:#0b0b09;box-shadow:none;gap:12px;letter-spacing:.08em;transition:background-color .2s,border-color .2s,color .2s,transform .2s}
+.button:hover{background:#fff7db;border-color:#fff7db;transform:translateY(-2px)}
+.button--compact{min-height:40px;padding:0 15px}
+.button--ghost{background:rgba(255,255,255,.025);color:#f6e7b0;border-color:#5e512d;box-shadow:none}
+.button--ghost:hover{background:#17140c;border-color:#a88932;color:#fff3c9}
+.button-arrow{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.button:hover .button-arrow{transform:translate(2px,-2px)}
+.button--disabled,.button--disabled:hover{background:#15140f;border-color:#343126;color:#676253;transform:none;box-shadow:none}
+@media(prefers-reduced-motion:reduce){.button-arrow{transition:none}.button:hover .button-arrow{transform:none}}
